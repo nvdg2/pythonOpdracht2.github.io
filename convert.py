@@ -5,7 +5,7 @@ import os
 postsMetadata=[]
 postsHTMLContent=[]
 
-def convertConentFolder(pathToFolder):
+def convertContentFolder(pathToFolder):
     files=os.listdir(pathToFolder)
     for file in files:
         yamlData, markdownData = splitMarkdownAndYAML(f"{pathToFolder}/{file}")
