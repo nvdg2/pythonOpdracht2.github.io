@@ -1,8 +1,16 @@
 import yaml
 import mistune
+import os
 
 postsMetadata=[]
 postsHTMLContent=[]
+
+def convertConentFolder(pathToFolder):
+    files=os.listdir(pathToFolder)
+    for file in files:
+        yamlData, markdownData = splitMarkdownAndYAML(f"{pathToFolder}/{file}")
+        convertYAMLToDict(yamlData)
+        convertMardownToHTML(markdownData)
 
 def splitMarkdownAndYAML(pathToFile):
     partYAML=""
@@ -23,18 +31,12 @@ def splitMarkdownAndYAML(pathToFile):
         
         return partYAML, partMarkdown
 
-
-
 def convertYAMLToDict(inputYAML):
-        objectYAML= yaml.safe_load(inputYAML)
-        postsMetadata.append(objectYAML)
-        print(postsMetadata)
+    objectYAML= yaml.safe_load(inputYAML)
+    postsMetadata.append(objectYAML)
+    print(postsMetadata)
+
 def convertMardownToHTML(markdownInput):
     htmlOutput = mistune.html(markdownInput)
     postsHTMLContent.append(htmlOutput)
     print(postsHTMLContent)
-
-yamlData, markdownData = splitMarkdownAndYAML("posts\post1.md")
-convertYAMLToDict(yamlData)
-convertMardownToHTML(markdownData)
-
