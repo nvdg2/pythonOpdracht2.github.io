@@ -7,13 +7,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-	<div>
-		<h1 style="text-align: center;">{{ title }}</h1>
-		<p  style="text-align: center;"><em>Door {{ author }}, gepubliceerd op {{ date }}</em></p>
-		<p  style="text-align: center;">{{ summary }}</p>
-	</div>
-    <div>
-        {{content}}
-    </div>
+	<h1 style="text-align: center;">{{ title }}</h1>
+	<ul>
+		{% for post in posts %}
+		{% set location = "posts/" + post.filename %}
+		<li>
+			<a href="{{location}}">{{post.title}}</a>
+		</li>
+		{% endfor %}
+	</ul>
 </body>
 </html>
