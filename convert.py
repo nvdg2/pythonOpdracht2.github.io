@@ -4,16 +4,21 @@ import os
 
 postsMetadata=[]
 postsHTMLContent=[]
+pagesMetadata=[]
+pagesHTMLContent=[]
 
 def getPostData():
     return postsHTMLContent, postsMetadata
+
+def getPagesData():
+    return pagesHTMLContent, pagesMetadata
 
 def convertContentFolder(pathToFolder):
     files=os.listdir(pathToFolder)
     for file in files:
         yamlData, markdownData = splitMarkdownAndYAML(f"{pathToFolder}/{file}")
-        convertYAMLToDict(yamlData)
-        convertMardownToHTML(markdownData)
+        type=convertYAMLToDict(yamlData)
+        convertMardownToHTML(markdownData,type)
 
 def splitMarkdownAndYAML(pathToFile):
     partYAML=""
@@ -36,10 +41,17 @@ def splitMarkdownAndYAML(pathToFile):
 
 def convertYAMLToDict(inputYAML):
     objectYAML= yaml.safe_load(inputYAML)
-    postsMetadata.append(objectYAML)
-    print(postsMetadata)
+    if objectYAML["type"]=="post":
+        postsMetadata.append(objectYAML)
+        return "post"
+    else:
+        pagesMetadata.append(objectYAML)
+        return "page"
 
-def convertMardownToHTML(markdownInput):
+def convertMardownToHTML(markdownInput,inType):
     htmlOutput = mistune.html(markdownInput)
-    postsHTMLContent.append(htmlOutput)
-    print(postsHTMLContent)
+    print(inType)
+    if inType=="post":
+        postsHTMLContent.append(htmlOutput)
+    else:
+        pagesHTMLContent.append(htmlOutput)

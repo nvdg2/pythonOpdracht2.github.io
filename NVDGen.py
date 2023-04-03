@@ -2,5 +2,6 @@ import convert
 import generate
 if __name__=="__main__":
     convert.convertContentFolder("posts")
-    generate.generatePostPages()
-    generate.generateNavPage()
+    convert.convertContentFolder("pages")
+    generate.generatePostHtml()
+    generate.generatePageHtml()
