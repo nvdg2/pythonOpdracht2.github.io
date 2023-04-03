@@ -5,6 +5,9 @@ import os
 postsMetadata=[]
 postsHTMLContent=[]
 
+def getPostData():
+    return postsHTMLContent, postsMetadata
+
 def convertContentFolder(pathToFolder):
     files=os.listdir(pathToFolder)
     for file in files:
