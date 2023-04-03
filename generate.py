@@ -2,6 +2,16 @@ import jinja2
 import convert
 import pathlib
 
+navbar=""
+def generateNavbar():
+    global navbar
+    pageContent, pageMetaData = convert.getPagesData()
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+    template= env.get_template("navTemplate.html")
+    navbar = template.render(
+        pages=pageMetaData
+    )
+
 def generatePostHtml():
     postContent, postMetaData = convert.getPostData()
     env = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
@@ -9,6 +19,7 @@ def generatePostHtml():
     for i in range(0,len(postContent)):
         renderedPage=template.render(
             postMetaData[i],
+            navbar=navbar,
             content=postContent[i]
         )
 
@@ -27,17 +38,21 @@ def generatePageHtml():
                 template= env.get_template("mainTemplate.html")
                 renderedPage = template.render(
                     pages=pageMetaData,
+                    navbar=navbar,
                     posts=postMetaData[1],
                     title=pageMetaData[i]["title"],
                     content=pageContent[i]
                 )
-                with open(f"_site/index.html","w") as htmlPost:
+                destFolder = pathlib.Path(f"_site/pages/{pageMetaData[i]['filename']}")
+                destFolder.mkdir(parents=True,exist_ok=True)
+                with open(f"{destFolder}/index.html","w") as htmlPost:
                     htmlPost.write(renderedPage)
-                    
+                            
             case _:
                 env = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
                 template= env.get_template("defaultTemplate.html")
                 renderedPage = template.render(
+                    navbar=navbar,
                     title=pageMetaData[i]["title"],
                     content=pageContent[i]
                 )

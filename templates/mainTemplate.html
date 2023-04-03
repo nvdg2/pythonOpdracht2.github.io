@@ -7,21 +7,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-	<nav>
-		<ul class="navbar">
-			{% for page in pages %}
-			{% set location = "pages/" + page.filename %}
-			<li>
-				<a href="{{location}}">{{page.title}}</a>
-			</li>
-			{% endfor %}
-		</ul>
-	</nav>	  
+	{{navbar}}
 	<div class="container">
 		<h1 style="text-align: center;">Hieronder vindt je alle posts</h1>
 		<ul class="post-list">
 			{% for post in posts %}
-			{% set location = "posts/" + post.filename %}
+			{% set location = "../../posts/" + post.filename %}
 			<li>
 				<a href="{{location}}">{{post.title}}</a>
 			</li>
@@ -66,7 +57,7 @@ body {
 .post-list li a:hover {
   color: #555;
 }
-.navbar {
+/* .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -88,5 +79,5 @@ body {
 
 .navbar li a:hover {
   background-color: #111;
-}
+} */
 </style>
