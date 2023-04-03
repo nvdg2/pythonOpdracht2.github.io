@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<nav>
+		<ul class="navbar">
+			{% for page in pages %}
+			{% set location = "pages/" + page.filename %}
+			<li>
+				<a href="{{location}}">{{page.title}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</nav>	  
+	<div class="container">
+		<h1 style="text-align: center;">Hieronder vindt je alle posts</h1>
+		<ul class="post-list">
+			{% for post in posts %}
+			{% set location = "posts/" + post.filename %}
+			<li>
+				<a href="{{location}}">{{post.title}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</body>
+</html>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  background-color: #fff;
+  margin: 0 0 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-list li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post-list li a:hover {
+  color: #555;
+}
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #111;
+}
+</style>
