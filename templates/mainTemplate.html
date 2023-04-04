@@ -12,7 +12,7 @@
 		<h1 style="text-align: center;">Hieronder vindt je alle posts</h1>
 		<ul class="post-list">
 			{% for post in posts %}
-			{% set location = "/pythonOpdracht2.github.io/site/posts/" + post.filename %}
+			{% set location = "/pythonOpdracht2.github.io/_site/posts/" + post.filename %}
 			<li>
 				<a href="{{location}}">{{post.title}}</a>
 			</li>
