@@ -23,7 +23,7 @@ def generatePostHtml():
             content=postContent[i]
         )
 
-        destFolder = pathlib.Path(f"site/posts/{postMetaData[i]['filename']}")
+        destFolder = pathlib.Path(f"_site/posts/{postMetaData[i]['filename']}")
         destFolder.mkdir(parents=True,exist_ok=True)
         with open(f"{destFolder}/index.html","w") as htmlPost:
             htmlPost.write(renderedPage)
@@ -43,7 +43,7 @@ def generatePageHtml():
                     title=pageMetaData[i]["title"],
                     content=pageContent[i]
                 )
-                destFolder = pathlib.Path(f"site/pages/{pageMetaData[i]['filename']}")
+                destFolder = pathlib.Path(f"_site/pages/{pageMetaData[i]['filename']}")
                 destFolder.mkdir(parents=True,exist_ok=True)
                 with open(f"{destFolder}/index.html","w") as htmlPost:
                     htmlPost.write(renderedPage)
@@ -56,7 +56,7 @@ def generatePageHtml():
                     title=pageMetaData[i]["title"],
                     content=pageContent[i]
                 )
-                destFolder = pathlib.Path(f"site/pages/{pageMetaData[i]['filename']}")
+                destFolder = pathlib.Path(f"_site/pages/{pageMetaData[i]['filename']}")
                 destFolder.mkdir(parents=True,exist_ok=True)
                 with open(f"{destFolder}/index.html","w") as htmlPost:
                     htmlPost.write(renderedPage)
