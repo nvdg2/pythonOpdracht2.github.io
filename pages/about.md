@@ -1,10 +1,10 @@
 ---
 filename: "about"
 type: "page"
-title: "Over Mij"
+title: "Over mij"
 ---
 
-# Over Mij
+# Over mij
 
 ## Wie ben ik?
 
