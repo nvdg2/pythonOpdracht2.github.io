@@ -21,4 +21,4 @@ Ben je op zoek naar manieren om meer gedaan te krijgen in minder tijd? Hier zijn
 
 5. Zorg voor een opgeruimde werkplek: Een opgeruimde werkplek kan je helpen om je te concentreren en je productiviteit te verhogen. Zorg ervoor dat je werkplek georganiseerd en opgeruimd is voordat je aan het werk gaat.
 
-Probeer deze tips eens uit en kijk of ze je kunnen helpen om meer gedaan te krijgen in minder tijd. Veel succes!
+Probeer deze tips eens uit en kijk of ze je kunnen helpen om meer gedaan te krijgen in minder tijd. Veel succes !
