@@ -3,7 +3,7 @@ filename: "post2"
 type: "post"
 title: "5 tips om je productiviteit te verbeteren"
 date: 2023-04-03
-author: "Niels Van De Ginste"
+author: "ChatGPT"
 summary: "Een korte samenvatting van de tips om productiever te zijn"
 ---
 

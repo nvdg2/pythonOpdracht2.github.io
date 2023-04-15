@@ -3,7 +3,7 @@ filename: "post3"
 type: "post"
 title: "Hoe begin je met mediteren?"
 date: 2023-04-04
-author: "Niels Van De Ginste"
+author: "ChatGPT"
 summary: "Een korte introductie tot meditatie en hoe je ermee kunt beginnen"
 ---
 

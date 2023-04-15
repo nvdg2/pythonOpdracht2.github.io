@@ -3,7 +3,7 @@ filename: "post4"
 type: "post"
 title: "5 tips voor productief thuiswerken"
 date: 2023-04-06
-author: "Niels Van De Ginste"
+author: "ChatGPT"
 summary: "Met deze 5 tips kun je productief thuiswerken en een goede balans tussen werk en privé behouden"
 ---
 

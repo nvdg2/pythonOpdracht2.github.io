@@ -3,7 +3,7 @@ filename: "post1"
 type: "post"
 title: "Waarom wandelen goed is voor je gezondheid"
 date: 2023-04-03
-author: "Niels Van De Ginste"
+author: "ChatGPT"
 summary: "Een korte samenvatting van de voordelen van wandelen"
 ---
 
